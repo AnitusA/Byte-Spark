@@ -87,6 +87,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
                   <div className="ml-10 flex items-baseline space-x-4">
                     {[
                       ['Leaderboard', '/leaderboard'],
+                      ['Calendar', '/calendar'],
                       ['Captain', '/captain'],
                       ['Organizer', '/organizer'],
                       ['Admin', '/admin']
@@ -192,6 +193,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 <div style={{ flex: 1, overflowY: 'auto', padding: '12px', backgroundColor: '#0f172a' }}>
                   {[
                     ['Leaderboard', '/leaderboard', '🏆'],
+                    ['Calendar', '/calendar', '📅'],
                     ['Captain', '/captain', '⚔️'],
                     ['Organizer', '/organizer', '📋'],
                     ['Admin', '/admin', '⚙️']
