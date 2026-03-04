@@ -2,7 +2,8 @@ import { redirect, useActionData, useLoaderData } from "react-router";
 import type { ActionFunctionArgs, LoaderFunctionArgs } from "react-router";
 import { createSupabaseClient } from "~/utils/supabase.server";
 import { invalidateCache } from "~/utils/cache.server";
-import { User, ShieldAlert, Zap, PlusCircle } from "lucide-react";
+import { User, ShieldAlert, Zap, PlusCircle, BarChart } from "lucide-react";
+import { Link } from "react-router";
 import { useState } from "react";
 
 export async function loader({ request }: LoaderFunctionArgs) {
@@ -103,13 +104,22 @@ export default function Organizer() {
                         <ShieldAlert className="text-red-500 w-6 h-6 md:w-8 md:h-8" />
                         Organizer Central
                     </h1>
-                    <button
-                        onClick={() => setShowPointsForm(!showPointsForm)}
-                        className="btn-primary !bg-red-600 hover:!bg-red-500 text-sm md:text-base py-2 md:py-2.5"
-                    >
-                        <Zap className="w-4 h-4" />
-                        Give Points
-                    </button>
+                    <div className="flex gap-2">
+                        <button
+                            onClick={() => setShowPointsForm(!showPointsForm)}
+                            className="btn-primary !bg-red-600 hover:!bg-red-500 text-sm md:text-base py-2 md:py-2.5"
+                        >
+                            <Zap className="w-4 h-4" />
+                            Give Points
+                        </button>
+                        <Link
+                            to="/points-report"
+                            className="px-4 py-2 md:py-2.5 bg-green-700 hover:bg-green-600 text-white rounded-lg transition-colors text-sm md:text-base flex items-center gap-2"
+                        >
+                            <BarChart className="w-4 h-4" />
+                            Points Report
+                        </Link>
+                    </div>
                 </div>
                 <p className="text-slate-400 mt-2 text-sm md:text-base">Oversee all rookies and manage global points attribution.</p>
             </div>

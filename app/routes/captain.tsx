@@ -2,7 +2,8 @@ import { redirect, useActionData, useLoaderData } from "react-router";
 import type { ActionFunctionArgs, LoaderFunctionArgs } from "react-router";
 import { createSupabaseClient } from "~/utils/supabase.server";
 import { invalidateCache } from "~/utils/cache.server";
-import { User, Shield, Zap, PlusCircle, UserPlus } from "lucide-react";
+import { User, Shield, Zap, PlusCircle, UserPlus, BarChart } from "lucide-react";
+import { Link } from "react-router";
 import { useState } from "react";
 
 export async function loader({ request }: LoaderFunctionArgs) {
@@ -159,6 +160,13 @@ export default function Captain() {
                             <Zap className="w-4 h-4" />
                             Give Points
                         </button>
+                        <Link
+                            to="/points-report"
+                            className="px-4 py-2 md:py-2.5 bg-green-700 hover:bg-green-600 text-white rounded-lg transition-colors text-sm md:text-base flex items-center gap-2"
+                        >
+                            <BarChart className="w-4 h-4" />
+                            Points Report
+                        </Link>
                         <button
                             onClick={() => { setShowAddForm(!showAddForm); setShowPointsForm(false); }}
                             className="px-4 py-2 md:py-2.5 bg-slate-700 hover:bg-slate-600 text-white rounded-lg transition-colors text-sm md:text-base flex items-center gap-2"

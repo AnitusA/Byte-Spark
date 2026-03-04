@@ -53,6 +53,10 @@ body {
   @apply bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-all active:scale-95 flex items-center justify-center gap-2 shadow-lg shadow-blue-900/20;
 }
 
+.btn-secondary {
+  @apply bg-slate-700 hover:bg-slate-600 text-white font-medium py-2 px-4 rounded-lg transition-all active:scale-95 flex items-center justify-center gap-2 shadow-lg shadow-slate-900/20;
+}
+
 .input-field {
   @apply bg-slate-900/50 border border-slate-700 rounded-lg py-2 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all;
 }
@@ -75,4 +79,91 @@ body {
 
 .delay-100 {
   animation-delay: 100ms;
+}
+
+/* Matrix Table Styles */
+.matrix-table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.matrix-table th,
+.matrix-table td {
+  border: 1px solid rgba(71, 85, 105, 0.3);
+  position: relative;
+}
+
+.matrix-table th.sticky,
+.matrix-table td.sticky {
+  position: sticky;
+  z-index: 1;
+}
+
+.matrix-table th.sticky.left-0,
+.matrix-table td.sticky.left-0 {
+  left: 0;
+  z-index: 2;
+}
+
+.matrix-table th.sticky.right-0,
+.matrix-table td.sticky.right-0 {
+  right: 0;
+  z-index: 2;
+}
+
+/* Grid lines for better readability */
+.matrix-table tbody tr:nth-child(5n) {
+  border-bottom: 2px solid rgba(59, 130, 246, 0.3);
+}
+
+/* Print Styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  .print-view {
+    font-size: 12px !important;
+    color: black !important;
+    background: white !important;
+  }
+  
+  .print-view * {
+    color: black !important;
+    background: white !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+  
+  .print-view .glass {
+    background: white !important;
+    border: 1px solid #ccc !important;
+  }
+  
+  .print-view table {
+    break-inside: auto;
+    border-collapse: collapse;
+  }
+  
+  .print-view td, .print-view th {
+    border: 1px solid #ccc !important;
+    page-break-inside: avoid;
+  }
+  
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  
+  .btn-secondary {
+    background: #f3f4f6 !important;
+    color: #374151 !important;
+    border: 1px solid #d1d5db !important;
+  }
+  
+  .print-view table th,
+  .print-view table td {
+    padding: 4px !important;
+    font-size: 10px !important;
+  }
 }

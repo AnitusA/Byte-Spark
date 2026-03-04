@@ -8,6 +8,7 @@ export default [
     route("captain", "routes/captain.tsx"),
     route("organizer", "routes/organizer.tsx"),
     route("admin", "routes/admin.tsx"),
+    route("points-report", "routes/points-report.tsx"),
     route("profile/:id", "routes/profile.$id.tsx"),
     route("auth/callback", "routes/auth.callback.tsx"),
 ] satisfies RouteConfig;
